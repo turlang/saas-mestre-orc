@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestão de Personagens | Mestre Orc</title>
+  <meta name="description" content="Cadastre personagens, acompanhe status de ficha e exporte JSON preparado para integração futura com Foundry.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a class="logo" href="./index.html">MESTRE <span>ORC</span></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="main-navigation"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="main-navigation">
+      <li><a href="./dashboard-mestre.html">Dashboard</a></li>
+      <li><a href="./campanhas-manager.html">Campanhas</a></li>
+      <li><a href="./personagens-manager.html" class="active-link">Personagens</a></li>
+      <li><a href="./reservas.html">Reservas</a></li>
+      <li><a href="./personagem.html">Criador</a></li>
+    
+            <li><a href="./marketplace.html">Marketplace</a></li>
+            <li><a href="./mobile.html">App Mobile</a></li>
+        </ul>
+  </nav>
+
+  <header class="page-hero dashboard-hero">
+    <p class="eyebrow">Fase 2 • Área de personagens</p>
+    <h1>Personagens e Fichas</h1>
+    <p>Organize jogadores, classes, níveis, campanhas e pendências antes de enviar tudo para o Foundry.</p>
+  </header>
+
+  <main class="section phase2-layout">
+    <aside class="glass-panel phase2-form-panel">
+      <h2>Novo personagem</h2>
+      <form class="app-form" data-character-form>
+        <label>Jogador <input name="player" required placeholder="Nome do jogador"></label>
+        <label>Personagem <input name="name" required placeholder="Nome do personagem"></label>
+        <label>Classe/Subclasse <input name="className" required placeholder="Ex: Ladino Fantasma"></label>
+        <label>Nível <input type="number" name="level" min="1" max="20" value="1" required></label>
+        <label>Campanha <input name="campaign" required placeholder="Campanha vinculada"></label>
+        <label>Status
+          <select name="status">
+            <option>Aprovado</option>
+            <option>Revisar ficha</option>
+            <option>História pendente</option>
+            <option>Aguardando jogador</option>
+          </select>
+        </label>
+        <label>Notas <input name="notes" required placeholder="Pendências, conceito ou observações"></label>
+        <button class="btn-cta btn-cta-primary" type="submit">Salvar Personagem</button>
+      </form>
+    </aside>
+
+    <section>
+      <h2 class="section-title">Personagens cadastrados</h2>
+      <div class="phase2-list" data-character-manager></div>
+    </section>
+  </main>
+
+  <footer class="footer"><p>Mestre Orc • Personagens com exportação JSON para próxima integração Foundry.</p></footer>
+  <script src="./script.js"></script>
+  <script src="./phase2-data.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="gerador-style.css">
+    <title>Painel do Mestre | Ferramentas D&amp;D - Mestre Orc</title>
+    <meta name="description" content="Ferramentas do Mestre Orc para rolagem de dados, criação de encontros e apoio a sessões de D&amp;D.">
+</head>
+<body>
+
+    <!-- Menu Superior Fixo com Identidade Mestre Orc -->
+    <header class="menu-superior">
+        <div class="logo-texto">MESTRE ORC</div>
+        <nav class="links-navegacao">
+            <a href="index.html">AVENTURAS</a>
+            <a href="gerador.html" class="link-ativo">FERRAMENTAS DM</a>
+            <a href="#">FOUNDRY</a>
+        </nav>
+    </header>
+
+    <!-- Espaçador técnico para descer o conteúdo abaixo do topo fixo -->
+    <div class="espacador-topo"></div>
+
+    <!-- Contêiner Principal da Ferramenta -->
+    <main class="caixa-principal">
+        
+        <h2 class="titulo-gerador">Grimório de Encontros D&D 5.5</h2>
+        <p class="subtitulo">Ferramenta oficial de balanceamento mecânico e narrativo para Mestres:</p>
+
+        <!-- Painel de Dados Virtuais (Dice Set Oficial) -->
+        <div class="painel-dados">
+            <label class="titulo-painel">🎲 Conjunto de Dados Oficial (Dice Set)</label>
+            <div class="grade-botoes-dados">
+                <button class="btn-dado" onclick="rolarDado(4)">d4</button>
+                <button class="btn-dado" onclick="rolarDado(6)">d6</button>
+                <button class="btn-dado" onclick="rolarDado(8)">d8</button>
+                <button class="btn-dado" onclick="rolarDado(10)">d10</button>
+                <button class="btn-dado" onclick="rolarDado(12)">d12</button>
+                <button class="btn-dado" onclick="rolarDado(20)">d20</button>
+                <button class="btn-dado" onclick="rolarDado(100)">d100</button>
+            </div>
+            <div id="resultadoDado" class="resultado-dado-texto">Clique em um dado para rolar...</div>
+        </div>
+
+        <!-- Seleção do Cenário de Campanha -->
+        <div class="campo">
+            <label>Cenário / Cenografia:</label>
+            <select id="escolhaTema">
+                <option value="Fantasia">Fantasia Clássica (Dungeons)</option>
+                <option value="Cyberpunk">Cyberpunk / Tecnomagia</option>
+                <option value="Terror">Terror Sobrenatural</option>
+            </select>
+        </div>
+
+        <!-- Seleção do Ritmo de Jogo -->
+        <div class="campo">
+            <label>Tipo de Jogo (Ritmo):</label>
+            <select id="escolhaFormato">
+                <option value="OneShot">One-Shot (Sessão Única Direta)</option>
+                <option value="Campanha">Campanha (Início de uma Saga)</option>
+            </select>
+        </div>
+
+        <!-- Seleção da Faixa de Poder (Para módulos One-Shot) -->
+        <div class="campo">
+            <label>Tier de Jogo (Nível dos Personagens):</label>
+            <select id="escolhaTier">
+                <option value="Tier1">Tier 1: Defensores Locais (Níveis 1-4)</option>
+                <option value="Tier2">Tier 2: Heróis do Reino (Níveis 5-10)</option>
+                <option value="Tier3">Tier 3: Mestres do Reino (Níveis 11-16)</option>
+                <option value="Tier4">Tier 4: Mestres do Multiverso (Níveis 17-20)</option>
+            </select>
+        </div>
+
+        <!-- Entrada Numérica de Integrantes do Grupo -->
+        <div class="campo">
+            <label>Nº de Integrantes no Grupo:</label>
+            <input type="number" id="qtdJogadores" min="1" max="8" value="4">
+        </div>
+
+        <!-- Novo Campo de Seleção: Método de Progressão -->
+        <div class="campo">
+            <label>Método de Progressão dos Personagens:</label>
+            <select id="escolhaEvolucao">
+                <option value="Milestone">Marcos de Campanha (Milestone)</option>
+                <option value="XP">Pontos de Experiência (XP Tradicional)</option>
+            </select>
+        </div>
+
+        <!-- Botão de Ignição da Ferramenta -->
+        <button class="btn-gerar" onclick="criarHistoria()">Forjar Encontro e Loot</button>
+
+        <!-- Bloco de Output da Resposta -->
+        <div id="caixaResultado" class="resultado-escondido">
+            <h3 class="resultado-titulo-aba">📜 Relatório Macabro da Missão</h3>
+            <div id="textoDaHistoria"></div>
+        </div>
+
+    </main>
+
+    <!-- Conexão Acadêmica Externa com o Arquivo de Lógica -->
+    <script src="gerador-script.js"></script>
+</body>
+</html>

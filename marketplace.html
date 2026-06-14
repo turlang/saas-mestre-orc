@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketplace | Mestre Orc</title>
+  <meta name="description" content="Marketplace Mestre Orc para aventuras, mapas, tokens, campanhas e pacotes premium para Foundry VTT.">
+  <meta name="theme-color" content="#050505">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a class="logo" href="./index.html">MESTRE <span>ORC</span></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-navigation"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="main-navigation">
+      <li><a href="./index.html#sobre">Sobre</a></li>
+      <li><a href="./Campanhas.html">Aventuras</a></li>
+      <li><a href="./agenda.html">Agenda</a></li>
+      <li><a href="./dashboard-mestre.html">Painel</a></li>
+      <li><a href="./ia-mestre.html">IA Orc</a></li>
+            <li><a href="./ia-avancada.html">IA Pro</a></li>
+      <li><a href="./biblioteca-premium.html">Biblioteca</a></li>
+            <li><a href="./biblioteca-premium.html">Biblioteca</a></li>
+      <li><a href="./marketplace.html">Marketplace</a></li>
+      <li><a href="./financeiro.html">Financeiro</a></li>
+      <li><a href="./mobile.html">App Mobile</a></li>
+      <li><a href="./auth.html">Entrar</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-hero compact-hero">
+    <p class="eyebrow">Fase 5 • Monetização</p>
+    <h1>Marketplace Mestre Orc</h1>
+    <p>Venda e organize aventuras, mapas, tokens, campanhas, pacotes Foundry e conteúdo premium para outros mestres.</p>
+    <div class="hero-actions">
+      <a href="#catalogo" class="btn-cta btn-cta-primary">Ver Catálogo</a>
+      <a href="#publicar" class="btn-cta btn-cta-secondary">Publicar Produto</a>
+    </div>
+  </header>
+
+  <main class="section phase56-shell" id="catalogo">
+    <h2 class="section-title">Catálogo Premium</h2>
+    <p class="section-text">Esta versão usa dados locais para simular o marketplace. Depois, os mesmos campos viram coleções no MongoDB e rotas na API.</p>
+
+    <section class="market-toolbar" aria-label="Filtros do marketplace">
+      <button class="filter-pill active" data-filter="todos">Todos</button>
+      <button class="filter-pill" data-filter="Aventura">Aventuras</button>
+      <button class="filter-pill" data-filter="Mapa">Mapas</button>
+      <button class="filter-pill" data-filter="Token">Tokens</button>
+      <button class="filter-pill" data-filter="Foundry">Foundry</button>
+    </section>
+
+    <section class="market-grid" id="marketplaceGrid" aria-live="polite"></section>
+
+    <section class="phase56-grid" id="publicar">
+      <article class="premium-panel publish-panel">
+        <h3>Publicar novo conteúdo</h3>
+        <p>Modelo preparado para mestre vender material próprio dentro da plataforma.</p>
+        <form id="productForm" class="phase2-form">
+          <label>Nome do produto<input name="name" required placeholder="Ex: Fortaleza do Limo Negro"></label>
+          <label>Categoria
+            <select name="category" required>
+              <option>Aventura</option><option>Mapa</option><option>Token</option><option>Foundry</option>
+            </select>
+          </label>
+          <label>Preço em R$<input name="price" type="number" min="0" step="1" required value="29"></label>
+          <label>Descrição<textarea name="description" rows="4" required placeholder="Resumo, nível recomendado, estilo e conteúdo incluso."></textarea></label>
+          <button class="btn-cta btn-cta-primary" type="submit">Adicionar ao Marketplace</button>
+        </form>
+      </article>
+
+      <article class="premium-panel cart-panel">
+        <h3>Carrinho e Receita</h3>
+        <div id="cartList" class="cart-list"></div>
+        <div class="market-total"><span>Total simulado</span><strong id="cartTotal">R$ 0</strong></div>
+        <button id="clearCart" class="btn-cta btn-cta-secondary small-action" type="button">Limpar Carrinho</button>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer"><p>Mestre Orc • Marketplace preparado para fase SaaS premium.</p></footer>
+  <script src="./api-client.js"></script>
+  <script src="./payments.js"></script>
+  <script src="./marketplace.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

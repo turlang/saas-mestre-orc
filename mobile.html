@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Mobile | Mestre Orc</title>
+  <meta name="description" content="Experiência mobile PWA do Mestre Orc com atalhos para jogador, mestre, campanhas, reservas, IA e Foundry.">
+  <meta name="theme-color" content="#050505">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="mobile-body">
+  <nav class="navbar mobile-navbar">
+    <a class="logo" href="./index.html">MESTRE <span>ORC</span></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-navigation"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="main-navigation">
+      <li><a href="./dashboard-mestre.html">Painel</a></li>
+      <li><a href="./area-jogador.html">Jogador</a></li>
+      <li><a href="./biblioteca-premium.html">Biblioteca</a></li>
+            <li><a href="./biblioteca-premium.html">Biblioteca</a></li>
+      <li><a href="./marketplace.html">Marketplace</a></li>
+      <li><a href="./ia-mestre.html">IA Orc</a></li>
+            <li><a href="./ia-avancada.html">IA Pro</a></li>
+    </ul>
+  </nav>
+
+  <main class="mobile-app-shell">
+    <section class="phone-frame" aria-label="Protótipo mobile Mestre Orc">
+      <div class="phone-status"><span>20:26</span><span>⚔️ 5G</span></div>
+      <header class="mobile-hero-card">
+        <p class="eyebrow">Fase 6 • PWA</p>
+        <h1>Mestre Orc App</h1>
+        <p>Atalhos rápidos para jogador, mestre e mesa.</p>
+      </header>
+
+      <section class="mobile-stats">
+        <article><strong>12</strong><span>Jogadores</span></article>
+        <article><strong>4</strong><span>Mesas</span></article>
+        <article><strong>R$ 840</strong><span>Receita</span></article>
+      </section>
+
+      <section class="mobile-actions-grid">
+        <a href="./reservas.html">Reservas</a>
+        <a href="./personagens-manager.html">Personagens</a>
+        <a href="./foundry.html">Foundry</a>
+        <a href="./ia-mestre.html">IA Orc</a>
+        <a href="./marketplace.html">Loja</a>
+        <a href="./agenda.html">Agenda</a>
+      </section>
+
+      <section class="session-card">
+        <span>Próxima sessão</span>
+        <h2>Sombras Sobre Corval</h2>
+        <p>Quinta • 20h • Foundry VTT</p>
+        <a href="./foundry.html" class="btn-mobile-primary">Entrar na Mesa</a>
+      </section>
+
+      <nav class="bottom-tabbar" aria-label="Navegação mobile">
+        <a href="./index.html">Início</a>
+        <a href="./dashboard-mestre.html">Painel</a>
+        <a href="./marketplace.html">Loja</a>
+        <a href="./auth.html">Conta</a>
+      </nav>
+    </section>
+
+    <section class="section mobile-info-panel">
+      <h2 class="section-title">Pronto para virar aplicativo</h2>
+      <p class="section-text">Foram adicionados Manifest, Service Worker, layout mobile app-like e atalhos de navegação. Ao hospedar com HTTPS, o navegador poderá oferecer instalação como PWA.</p>
+      <div class="value-grid">
+        <article class="value-card"><strong>PWA</strong><span>Instalável no celular sem loja.</span></article>
+        <article class="value-card"><strong>Offline básico</strong><span>Cache dos arquivos principais.</span></article>
+        <article class="value-card"><strong>UX mobile</strong><span>Atalhos pensados para uso em sessão.</span></article>
+      </div>
+    </section>
+  </main>
+
+  <script src="./mobile-app.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

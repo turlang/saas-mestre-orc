@@ -1,0 +1,13 @@
+{
+  "name": "Mestre Orc",
+  "short_name": "Mestre Orc",
+  "description": "Plataforma de RPG online com campanhas, Foundry VTT, IA e marketplace.",
+  "start_url": "./mobile.html",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "./mestre-orc.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

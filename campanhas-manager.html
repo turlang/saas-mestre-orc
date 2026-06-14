@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestão de Campanhas | Mestre Orc</title>
+  <meta name="description" content="Gerencie campanhas, vagas, valores, horários e mundos Foundry no painel Mestre Orc.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a class="logo" href="./index.html">MESTRE <span>ORC</span></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="main-navigation"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="main-navigation">
+      <li><a href="./dashboard-mestre.html">Dashboard</a></li>
+      <li><a href="./campanhas-manager.html" class="active-link">Campanhas</a></li>
+      <li><a href="./personagens-manager.html">Personagens</a></li>
+      <li><a href="./reservas.html">Reservas</a></li>
+      <li><a href="./foundry.html">Foundry</a></li>
+    
+            <li><a href="./marketplace.html">Marketplace</a></li>
+            <li><a href="./mobile.html">App Mobile</a></li>
+        </ul>
+  </nav>
+
+  <header class="page-hero dashboard-hero">
+    <p class="eyebrow">Fase 2 • Gestão de campanhas</p>
+    <h1>Campanhas do Mestre Orc</h1>
+    <p>Controle vagas, horários, valores, status comercial e identificação do mundo Foundry de cada mesa.</p>
+  </header>
+
+  <main class="section phase2-layout">
+    <aside class="glass-panel phase2-form-panel">
+      <h2>Nova campanha</h2>
+      <form class="app-form" data-campaign-form>
+        <label>Nome <input name="name" required placeholder="Ex: A Queda da Costa da Espada"></label>
+        <label>Sistema <input name="system" required value="D&D 5e"></label>
+        <label>Níveis <input name="levelRange" required placeholder="1 ao 5"></label>
+        <label>Dia e horário <input name="day" required placeholder="Segundas, 20h às 23h"></label>
+        <label>Vagas totais <input type="number" name="seats" min="1" value="5" required></label>
+        <label>Vagas preenchidas <input type="number" name="filled" min="0" value="0" required></label>
+        <label>Valor por jogador <input type="number" name="price" min="0" value="150" required></label>
+        <label>Status
+          <select name="status">
+            <option>Vagas abertas</option>
+            <option>Captando jogadores</option>
+            <option>Em andamento</option>
+            <option>Preparação</option>
+          </select>
+        </label>
+        <label>Mundo Foundry <input name="foundryWorld" required placeholder="nome-do-mundo"></label>
+        <label>Resumo comercial <input name="pitch" required placeholder="Uma frase forte para vender a mesa"></label>
+        <button class="btn-cta btn-cta-primary" type="submit">Salvar Campanha</button>
+      </form>
+    </aside>
+
+    <section>
+      <h2 class="section-title">Campanhas cadastradas</h2>
+      <div class="phase2-list" data-campaign-manager></div>
+    </section>
+  </main>
+
+  <footer class="footer"><p>Mestre Orc • Campanhas preparadas para API e MongoDB.</p></footer>
+  <script src="./script.js"></script>
+  <script src="./phase2-data.js"></script>
+</body>
+</html>

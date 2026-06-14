@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IA do Mestre Orc | Gerador de Aventuras</title>
+  <meta name="description" content="Gerador de aventuras para D&D com exportação em JSON para preparação de mesas no Foundry VTT.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a class="logo" href="./index.html">MESTRE <span>ORC</span></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="main-navigation"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="main-navigation">
+      <li><a href="./index.html">Início</a></li>
+      <li><a href="./dashboard-mestre.html">Painel do Mestre</a></li>
+      <li><a href="./ia-mestre.html" class="active-link">IA Orc</a></li>
+      <li><a href="./personagem.html">Personagem</a></li>
+      <li><a href="./foundry.html">Foundry</a></li>
+    
+            <li><a href="./marketplace.html">Marketplace</a></li>
+            <li><a href="./mobile.html">App Mobile</a></li>
+        </ul>
+  </nav>
+
+  <header class="page-hero ai-hero">
+    <p class="eyebrow">Fase 4 • IA narrativa + exportação Foundry</p>
+    <h1>IA do Mestre Orc</h1>
+    <p>Gerador local avançado para criar aventura, cenas, NPCs, encontros, loot e um pacote JSON Foundry Ready com Journal, Scenes e metadados.</p>
+  </header>
+
+  <main class="section ai-layout">
+    <form class="ai-form" id="orcAiForm">
+      <h2>Gerar aventura</h2>
+      <label>Tema da aventura
+        <input type="text" id="aiTheme" value="Intriga sombria em Amn" required>
+      </label>
+      <label>Nível do grupo
+        <select id="aiLevel">
+          <option value="1-4">Níveis 1–4</option>
+          <option value="5-10" selected>Níveis 5–10</option>
+          <option value="11-16">Níveis 11–16</option>
+          <option value="17-20">Níveis 17–20</option>
+        </select>
+      </label>
+      <label>Região
+        <input type="text" id="aiRegion" value="Amn">
+      </label>
+      <label>Duração
+        <select id="aiDuration">
+          <option value="one-shot de 4 horas" selected>One-shot de 4 horas</option>
+          <option value="sessão de campanha de 3 horas">Sessão de campanha de 3 horas</option>
+          <option value="arco curto de 3 sessões">Arco curto de 3 sessões</option>
+        </select>
+      </label>
+      <label>Tom narrativo
+        <select id="aiTone">
+          <option value="sombrio" selected>Sombrio</option>
+          <option value="heroico">Heroico</option>
+          <option value="investigativo">Investigativo</option>
+          <option value="terror leve">Terror leve</option>
+        </select>
+      </label>
+      <label>Vilão ou ameaça principal
+        <input type="text" id="aiVillain" value="culto mercante ligado a necromancia">
+      </label>
+      <button class="btn-cta btn-cta-primary full-btn" type="submit">Criar aventura completa</button>
+      <button class="btn-cta btn-cta-secondary full-btn" type="button" id="downloadAdventure">Exportar JSON simples</button>
+      <button class="btn-cta btn-cta-secondary full-btn" type="button" id="downloadFoundryBundle">Exportar Foundry Bundle</button>
+    </form>
+
+    <section class="ai-output" aria-live="polite">
+      <h2>Resultado</h2>
+      <div id="aiResult" class="result-card">
+        <p>Preencha os campos e clique em <strong>Criar estrutura</strong>.</p>
+      </div>
+    </section>
+  </main>
+
+  <section class="section quick-access">
+    <h2 class="section-title">Como isso evolui</h2>
+    <div class="quick-grid">
+      <article class="quick-card"><h3>Journal Entry</h3><p>O bundle já sai organizado para virar diário dentro do Foundry.</p></article>
+      <article class="quick-card"><h3>Scene Pack</h3><p>Cada cena da aventura é separada com tipo, notas e metadados.</p></article>
+      <article class="quick-card"><h3>NPCs e encontros</h3><p>A IA cria personagens, segredos, motivos e combates sugeridos.</p></article>
+      <article class="quick-card"><h3>Módulo futuro</h3><p>O próximo salto é criar um módulo Foundry para importar o bundle com um clique.</p></article>
+    </div>
+  </section>
+
+  <footer class="footer"><p>Mestre Orc • IA narrativa para preparação de mesas.</p></footer>
+  <script src="./foundry-export.js"></script>
+  <script src="./orc-ai.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+/* ==========================================================
+   MÓDULO DND 5.5 - ESTILOS ISOLADOS
+   Integrado ao botão "Montar Personagem" do Mestre Orc
+   ========================================================== */
+
+:root {
+  --dnd-bg: #f4efe4;
+  --dnd-paper: #fffaf0;
+  --dnd-ink: #251b13;
+  --dnd-muted: #6b5a46;
+  --dnd-border: #2a1d13;
+  --dnd-gold: #b38b45;
+  --dnd-red: #6f1d1b;
+  --dnd-shadow: 0 22px 80px rgba(0, 0, 0, .35);
+  --dnd-radius: 16px;
+}
+
+.dnd-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  padding: 28px;
+  overflow: auto;
+  background: rgba(10, 7, 5, .76);
+  backdrop-filter: blur(8px);
+}
+
+.dnd-modal.is-open {
+  display: block;
+}
+
+.dnd-app {
+  max-width: 1180px;
+  margin: auto;
+  color: var(--dnd-ink);
+  background:
+    radial-gradient(circle at top left, rgba(179, 139, 69, .20), transparent 34%),
+    linear-gradient(180deg, var(--dnd-paper), var(--dnd-bg));
+  border: 2px solid var(--dnd-border);
+  border-radius: 24px;
+  box-shadow: var(--dnd-shadow);
+  overflow: hidden;
+}
+
+.dnd-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+  padding: 22px;
+  color: #fff;
+  background:
+    linear-gradient(135deg, rgba(37, 27, 19, .96), rgba(111, 29, 27, .96)),
+    repeating-linear-gradient(45deg, transparent 0 10px, rgba(255,255,255,.04) 10px 12px);
+}
+
+.dnd-title h2 {
+  margin: 0;
+  font-family: "Cinzel", serif;
+  font-size: clamp(1.4rem, 2vw, 2.2rem);
+}
+
+.dnd-title p {
+  margin: 6px 0 0;
+  color: rgba(255, 255, 255, .78);
+}
+
+.dnd-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dnd-btn {
+  border: 1px solid rgba(255,255,255,.22);
+  cursor: pointer;
+  border-radius: 12px;
+  padding: 11px 14px;
+  font-weight: 800;
+  color: var(--dnd-ink);
+  background: #fff7e8;
+}
+
+.dnd-btn.primary {
+  color: #fff;
+  background: linear-gradient(135deg, var(--dnd-red), #a3332f);
+}
+
+.dnd-btn.dark {
+  color: #fff;
+  background: #211711;
+}
+
+.dnd-body {
+  padding: 22px;
+}
+
+.dnd-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 18px;
+}
+
+.dnd-card {
+  padding: 18px;
+  border: 2px solid var(--dnd-border);
+  border-radius: var(--dnd-radius);
+  background: rgba(255, 250, 240, .90);
+  box-shadow: inset 0 0 0 1px rgba(179, 139, 69, .16);
+}
+
+.dnd-card h3 {
+  margin: 0 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid rgba(42, 29, 19, .20);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: .95rem;
+  font-family: "Cinzel", serif;
+}
+
+.dnd-form {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 12px;
+}
+
+.dnd-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  grid-column: span 4;
+}
+
+.dnd-field.wide { grid-column: span 12; }
+.dnd-field.half { grid-column: span 6; }
+.dnd-field.small { grid-column: span 2; }
+
+.dnd-field label {
+  font-size: .78rem;
+  font-weight: 900;
+  color: var(--dnd-muted);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.dnd-field input,
+.dnd-field select,
+.dnd-field textarea {
+  width: 100%;
+  border: 1.8px solid rgba(42, 29, 19, .42);
+  border-radius: 11px;
+  padding: 11px 12px;
+  font: inherit;
+  color: var(--dnd-ink);
+  background: #fffdf8;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.dnd-field textarea {
+  min-height: 116px;
+  resize: vertical;
+}
+
+.dnd-field input:focus,
+.dnd-field textarea:focus {
+  border-color: var(--dnd-gold);
+  box-shadow: 0 0 0 4px rgba(179, 139, 69, .18);
+}
+
+.dnd-abilities {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+}
+
+.dnd-ability {
+  text-align: center;
+  border: 2px solid var(--dnd-border);
+  border-radius: 18px;
+  padding: 12px 8px;
+  background: #fffdf8;
+}
+
+.dnd-ability strong {
+  display: block;
+  font-size: .78rem;
+  letter-spacing: .06em;
+}
+
+.dnd-ability input {
+  width: 64px;
+  margin: 9px auto 6px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.dnd-mod {
+  display: inline-flex;
+  min-width: 42px;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 5px 10px;
+  color: #fff;
+  background: var(--dnd-red);
+  font-weight: 900;
+}
+
+.dnd-storybox {
+  min-height: 180px;
+  white-space: pre-wrap;
+  line-height: 1.6;
+  color: var(--dnd-ink);
+  background: #fffdf8;
+}
+
+.dnd-footer {
+  padding: 16px 22px 22px;
+  color: var(--dnd-muted);
+  font-size: .85rem;
+}
+
+@media (max-width: 900px) {
+  .dnd-modal {
+    padding: 12px;
+  }
+
+  .dnd-grid,
+  .dnd-abilities {
+    grid-template-columns: 1fr;
+  }
+
+  .dnd-field,
+  .dnd-field.half,
+  .dnd-field.small {
+    grid-column: span 12;
+  }
+
+  .dnd-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

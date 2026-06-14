@@ -1,0 +1,448 @@
+/* =========================================================================
+   ESTILO VISUAL INTEGRADO - IDENTIDADE MESTRE ORC (D&D 5.5)
+   ========================================================================= */
+
+body {
+    background-color: #0a0909; /* Fundo preto profundo */
+    font-family: 'Georgia', serif;
+    color: #a6a29a; /* Texto cinza claro */
+    padding: 0;
+    margin: 0;
+}
+
+/* --- TOPO FIXO (MENU) --- */
+.menu-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(10, 9, 9, 0.95);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    box-sizing: border-box;
+    z-index: 1000;
+    border-bottom: 1px solid #141212;
+}
+
+.logo-texto {
+    font-size: 14px;
+    font-weight: bold;
+    color: #c4b499; /* Dourado suave fosco */
+    letter-spacing: 2px;
+}
+
+.links-navegacao a {
+    color: #736f66;
+    text-decoration: none;
+    font-size: 11px;
+    margin-left: 20px;
+    letter-spacing: 1px;
+    transition: color 0.2s;
+}
+
+.links-navegacao a:hover, .link-ativo {
+    color: #c4b499 !important;
+}
+
+.espacador-topo {
+    height: 120px; 
+}
+
+/* --- HERO SECTION (HOME) --- */
+.secao-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 60px;
+    text-align: center;
+    box-sizing: border-box;
+    background: radial-gradient(circle, #1c1414 0%, #0a0909 70%);
+}
+
+.orc-icone {
+    width: 150px;
+    height: 150px;
+    background-color: #4a4545;
+    clip-path: polygon(50% 0%, 80% 20%, 100% 40%, 80% 70%, 50% 100%, 20% 70%, 0% 40%, 20% 20%);
+    position: relative;
+    border-radius: 50% 50% 20% 20%;
+}
+
+.orc-icone::before, .orc-icone::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 6px;
+    background-color: #ff0000;
+    box-shadow: 0 0 10px #ff0000;
+    top: 45%;
+    border-radius: 50%;
+}
+
+.orc-icone::before { left: 30%; transform: rotate(-10deg); }
+.orc-icone::after { right: 30%; transform: rotate(10deg); }
+
+.titulo-principal {
+    font-size: 42px;
+    color: #ffffff;
+    margin: 25px 0 10px 0;
+    letter-spacing: 3px;
+    font-weight: normal;
+}
+
+.slogan {
+    font-size: 11px;
+    color: #8c857b;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+}
+
+.btn-chamada {
+    background-color: transparent;
+    color: #c4b499;
+    border: 1px solid #4a4235;
+    padding: 12px 30px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-chamada:hover {
+    border-color: #c4b499;
+    background-color: rgba(196, 180, 153, 0.05);
+}
+
+/* --- CAIXA PRINCIPAL DO GERADOR --- */
+.caixa-principal {
+    background-color: #141212;
+    max-width: 750px; /* Alargado sutilmente para acomodar melhor as fichas */
+    margin: 0 auto 80px auto;
+    padding: 40px 30px;
+    border: 1px solid #2b2721;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.7);
+    box-sizing: border-box;
+}
+
+.titulo-gerador {
+    color: #ffffff;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 0;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #6e6961;
+    font-size: 13px;
+    margin-bottom: 30px;
+}
+
+.painel-dados {
+    background-color: #0f0e0e;
+    padding: 15px;
+    border: 1px solid #2b2721;
+    margin-bottom: 25px;
+}
+
+.titulo-painel {
+    color: #c4b499 !important;
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: 13px;
+}
+
+.grade-botoes-dados {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-dado {
+    background-color: #1a1717;
+    color: #a6a29a;
+    border: 1px solid #423b31;
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-dado:hover {
+    border-color: #c4b499;
+    color: #ffffff;
+}
+
+.resultado-dado-texto {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 14px;
+    color: #c4b499;
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #c4b499;
+}
+
+select, input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 3px;
+    border: 1px solid #2b2721;
+    background-color: #0f0e0e;
+    color: #fff;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.btn-gerar {
+    width: 100%;
+    padding: 16px;
+    background-color: #1c1414;
+    color: #c4b499;
+    border: 1px solid #4a4235;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+}
+
+.btn-gerar:hover {
+    border-color: #c4b499;
+    background-color: rgba(196, 180, 153, 0.05);
+}
+
+/* --- OUTPUT DO RELATÓRIO --- */
+.resultado-escondido {
+    display: none;
+    margin-top: 40px;
+    padding: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.resultado-titulo-aba {
+    margin: 0 0 25px 0;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+    border-bottom: 1px solid #2b2721;
+    padding-bottom: 12px;
+}
+
+.secao-bloco {
+    background-color: #0f0e0e;
+    border: 1px solid #2b2721;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.secao-titulo {
+    font-size: 15px;
+    color: #ff3838; /* Vermelho característico nos títulos */
+    font-weight: bold;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #2b2721;
+    padding-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+.secao-texto {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #a6a29a;
+}
+
+/* =========================================================================
+   CORREÇÃO EXCLUSIVA: FICHAS DE MONSTROS TOTALMENTE ORGANIZADAS
+   ========================================================================= */
+
+.bloco-estatistica {
+    background-color: #161414; /* Fundo levemente contrastante */
+    border-left: 4px solid #c4b499; /* Tradicional barra lateral de D&D */
+    border-right: 1px solid #2b2721;
+    border-top: 1px solid #2b2721;
+    border-bottom: 1px solid #2b2721;
+    padding: 18px;
+    margin: 20px 0;
+    box-sizing: border-box;
+}
+
+.nome-criatura {
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+/* Informações de CA, PV e Deslocamento espaçadas e limpas */
+.ca-pv-info {
+    font-size: 13px;
+    color: #8c857b;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+/* Divisor estético vermelho fino imitando os manuais de monstros da Wizards */
+.ca-pv-info + .atributos-grade {
+    margin-top: 5px;
+}
+
+/* CORREÇÃO DA GRADE: Exibe os atributos alinhados e sem esmagamento */
+.atributos-grade {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Divide o espaço exatamente em 6 colunas iguais */
+    background-color: #0f0e0e;
+    padding: 10px 4px;
+    border-top: 1px solid #ff3838; /* Linha de corte vermelha fina temática */
+    border-bottom: 1px solid #ff3838;
+    margin: 12px 0;
+    text-align: center;
+    gap: 2px;
+}
+
+.atributo-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.atrib-nome {
+    font-weight: bold;
+    color: #c4b499; /* Nomes em dourado fosco */
+    font-size: 11px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.atrib-valor {
+    font-size: 13px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Blocos de Perícias e Ações com margem superior clara e quebra de linha correta */
+.bloco-estatistica .ca-pv-info:last-of-type {
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px dashed #2b2721; /* Linha tracejada separando as ações táticas */
+    color: #eedec4; /* Texto de ataque em tom pergaminho destacado */
+    margin-bottom: 0;
+}
+
+/* Suporte para telas menores de celulares */
+@media (max-width: 500px) {
+    .atributos-grade {
+        grid-template-columns: repeat(3, 1fr); /* Vira duas linhas de 3 colunas em telas minúsculas */
+        gap: 10px 0;
+    }
+}
+
+
+/* ===== Ajuste final atributos ===== */
+
+.atributos-grade{
+    display:grid;
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    gap:14px;
+    width:100%;
+}
+
+.atributo-item{
+    padding:16px 10px;
+    border-radius:12px;
+}
+
+.atrib-nome{
+    font-size:13px;
+    margin-bottom:12px;
+}
+
+.atrib-valor{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+    line-height:1.6;
+    font-size:15px;
+}
+
+.atrib-linha{
+    display:block;
+    white-space:nowrap;
+    text-align:center;
+    font-size:15px;
+}
+
+/* ===== textos maiores no portal ===== */
+
+body{
+    font-size:17px;
+}
+
+.hero-content p{
+    font-size:1.05rem !important;
+}
+
+.section-text{
+    font-size:1.08rem !important;
+}
+
+.nav-links a{
+    font-size:1rem !important;
+}
+
+.card-body p{
+    font-size:1rem !important;
+}
+
+.btn-cta,
+.btn-play{
+    font-size:.9rem !important;
+}
+
+.modal-content,
+.popup-content{
+    font-size:1rem;
+}
+
+@media(max-width:980px){
+    .atributos-grade{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+    }
+}
+
+@media(max-width:560px){
+    .atributos-grade{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+}
+
+@media(max-width:360px){
+    .atributos-grade{
+        grid-template-columns:1fr;
+    }
+}

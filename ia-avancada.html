@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IA Mestre Orc Pro | Aventuras completas</title>
+  <meta name="description" content="IA Mestre Orc Pro para gerar aventuras, NPCs, encontros, loot e bundle Foundry com backend Fastify e MongoDB.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a class="logo" href="./index.html">MESTRE <span>ORC</span></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="main-navigation"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="main-navigation">
+      <li><a href="./index.html">Início</a></li>
+      <li><a href="./dashboard-mestre.html">Painel</a></li>
+      <li><a href="./biblioteca-premium.html">Biblioteca</a></li>
+      <li><a href="./marketplace.html">Marketplace</a></li>
+      <li><a href="./foundry.html">Foundry</a></li>
+      <li><a href="./auth.html">Entrar</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-hero ai-hero">
+    <p class="eyebrow">Sprint 4 • IA Mestre Orc Pro</p>
+    <h1>Gerador completo de sessão</h1>
+    <p>Crie aventura, atos, NPCs, encontros, loot e estrutura Foundry. Quando o backend estiver rodando, o resultado também fica salvo no MongoDB.</p>
+  </header>
+
+  <main class="section ai-layout pro-panel">
+    <form class="ai-form" id="proAiForm">
+      <h2>Parâmetros da aventura</h2>
+      <label>Título
+        <input id="proTitle" value="A Cripta dos Sete Juramentos" required>
+      </label>
+      <label>Sistema
+        <input id="proSystem" value="D&D 5e">
+      </label>
+      <label>Nível
+        <select id="proLevel">
+          <option>1-4</option>
+          <option selected>5-10</option>
+          <option>11-16</option>
+          <option>17-20</option>
+        </select>
+      </label>
+      <label>Tema
+        <input id="proTheme" value="Intriga sombria em Amn" required>
+      </label>
+      <label>Tom
+        <select id="proTone">
+          <option value="sombrio" selected>Sombrio</option>
+          <option value="heroico">Heroico</option>
+          <option value="investigativo">Investigativo</option>
+          <option value="politico">Político</option>
+          <option value="terror">Terror</option>
+          <option value="comico">Cômico</option>
+        </select>
+      </label>
+      <label>Quantidade de jogadores
+        <input id="proParty" type="number" min="1" max="8" value="4">
+      </label>
+      <label>Duração
+        <select id="proDuration">
+          <option value="one-shot" selected>One-shot</option>
+          <option value="mini-campanha">Mini-campanha</option>
+          <option value="campanha">Campanha</option>
+        </select>
+      </label>
+      <label>Local
+        <input id="proLocation" value="Amn, Forgotten Realms">
+      </label>
+      <label>Observações extras
+        <textarea id="proNotes" rows="4" placeholder="Ex: quero um vilão necromante, dilema moral e final com escolha difícil."></textarea>
+      </label>
+      <button class="btn-cta btn-cta-primary full-btn" type="submit">Gerar e salvar na API</button>
+      <button class="btn-cta btn-cta-secondary full-btn" type="button" id="downloadProJson">Baixar JSON</button>
+    </form>
+
+    <section class="ai-output">
+      <h2>Resultado</h2>
+      <div id="proAiStatus" class="notice-card">Conectado em: <code>http://localhost:3333/api</code>. Faça login antes para salvar na API.</div>
+      <div id="proAiResult" class="result-card"><p>Preencha e gere sua aventura completa.</p></div>
+    </section>
+  </main>
+
+  <footer class="footer"><p>Mestre Orc • Sprint 4 concluído.</p></footer>
+  <script src="./api-client.js"></script>
+  <script src="./ia-avancada.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

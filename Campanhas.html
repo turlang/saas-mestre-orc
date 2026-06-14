@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventuras e Campanhas de RPG | Mestre Orc</title>
+    <meta name="description" content="Conheça as modalidades do Mestre Orc: one-shots de D&amp;D, campanhas online, mesas para iniciantes e veteranos com Foundry VTT.">
+    <meta property="og:title" content="Aventuras e Campanhas | Mestre Orc">
+    <meta property="og:description" content="Escolha one-shots ou campanhas online de D&amp;D com narrativa épica.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="logo" href="./index.html">MESTRE <span>ORC</span></a>
+        
+        <button class="menu-toggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="main-navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links" id="main-navigation">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="./Campanhas.html" class="active-link">Campanhas</a></li>
+            <li><a href="http://140.238.176.152:30000/join" target="_blank">Foundry</a></li>
+            <li><a href="./agenda.html">Agenda</a></li>
+            <li><a href="./area-jogador.html">Área do Jogador</a></li>
+        
+            <li><a href="./marketplace.html">Marketplace</a></li>
+            <li><a href="./mobile.html">App Mobile</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" style="height: 50vh;">
+        <div class="hero-content">
+            <h1>Aventuras</h1>
+            <p>Escolha o seu destino épico</p>
+        </div>
+    </header>
+
+   <main class="section">
+    <h2 class="section-title">Nossas Modalidades</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px;">
+        
+        <!-- CARD 1 -->
+        <a href="./oneshot.html" style="text-decoration: none; color: inherit;">
+            <div style="background: #0c0c0c; padding: 40px; border: 1px solid #1a1a1a; cursor: pointer; transition: 0.3s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='#1a1a1a'">
+                <h3 style="color: var(--gold); margin-bottom: 20px;">One-Shots</h3>
+                <p>Missões fechadas com início, meio e fim em uma única sessão de 4 horas. Ideal para iniciantes ou veteranos que buscam ação imediata.</p>
+            </div>
+        </a>
+
+        <!-- CARD 2 -->
+        <a href="./agenda.html" style="text-decoration: none; color: inherit;">
+            <div style="background: #0c0c0c; padding: 40px; border: 1px solid #1a1a1a; cursor: pointer; transition: 0.3s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='#1a1a1a'">
+                <h3 style="color: var(--gold); margin-bottom: 20px;">Campanhas</h3>
+                <p>Histórias densas que duram meses. Seu personagem evolui, ganha renome e influencia diretamente o destino do mundo.</p>
+            </div>
+        </a>
+
+    </div>
+    <div class="hero-actions section-actions"><a href="./agenda.html" class="btn-cta btn-cta-primary">Ver Agenda e Reservar</a><a href="./area-jogador.html" class="btn-cta btn-cta-secondary">Área do Jogador</a></div>
+</main>
+    <script src="./foundry-config.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

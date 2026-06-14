@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard SaaS | Mestre Orc</title>
+  <meta name="description" content="Dashboard SaaS do Mestre Orc com login demo, métricas de campanhas, jogadores, sessões, reservas e preparação para MongoDB.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a class="logo" href="./index.html">MESTRE <span>ORC</span></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="main-navigation"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="main-navigation">
+      <li><a href="./index.html">Início</a></li>
+      <li><a href="./Campanhas.html">Aventuras</a></li>
+      <li><a href="./agenda.html">Agenda</a></li>
+      <li><a href="./dashboard-mestre.html" class="active-link">Dashboard</a></li>
+      <li><a href="./ia-mestre.html">IA Orc</a></li>
+            <li><a href="./ia-avancada.html">IA Pro</a></li>
+      
+            <li><a href="./biblioteca-premium.html">Biblioteca</a></li>
+            <li><a href="./biblioteca-premium.html">Biblioteca</a></li>
+      <li><a href="./marketplace.html">Marketplace</a></li>
+            <li><a href="./mobile.html">App Mobile</a></li>
+            <li><a href="./auth.html">Entrar</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-hero dashboard-hero">
+    <p class="eyebrow">Fase 4 • SaaS + Foundry Bridge + IA do Mestre Orc</p>
+    <h1>Dashboard Mestre Orc</h1>
+    <p>Produto SaaS evoluído com gestão de campanhas, personagens, reservas, exportação Foundry Ready e IA narrativa para preparação de sessões.</p>
+    <div class="hero-actions section-actions">
+      <a href="./auth.html" class="btn-cta btn-cta-primary">Entrar ou Cadastrar</a>
+      <a href="./campanhas-manager.html" class="btn-cta btn-cta-secondary">Gerenciar Campanhas</a>
+      <a href="./foundry.html" class="btn-cta btn-cta-secondary">Bridge Foundry</a>
+      <a href="./ia-mestre.html" class="btn-cta btn-cta-secondary">IA do Mestre</a>
+    </div>
+  </header>
+
+  <main class="section dashboard-shell" data-dashboard-root>
+    <noscript>Ative o JavaScript para visualizar o dashboard demo.</noscript>
+  </main>
+
+
+  <section class="section phase2-dashboard-panel glass-panel">
+    <p class="eyebrow">Fase 2 ativa</p>
+    <h2 class="section-title">Resumo operacional</h2>
+    <p class="section-text">Agora o painel acompanha campanhas, personagens e reservas cadastradas no navegador, já no formato certo para migrar para MongoDB.</p>
+    <div class="stats-grid phase2-summary" data-phase2-summary></div>
+    <div class="section-actions phase2-actions">
+      <a href="./campanhas-manager.html" class="btn-cta btn-cta-primary">Campanhas</a>
+      <a href="./personagens-manager.html" class="btn-cta btn-cta-secondary">Personagens</a>
+      <a href="./reservas.html" class="btn-cta btn-cta-secondary">Reservas</a>
+    </div>
+  </section>
+
+  <section class="section roadmap-panel glass-panel">
+    <h2 class="section-title">Fases 3 e 4 ativas</h2>
+    <p class="section-text">O projeto agora possui bridge de exportação para Foundry e IA local para gerar aventuras. Para virar produção, o próximo passo é criar backend Node/Fastify, rotas protegidas, JWT, MongoDB e um módulo Foundry que leia os bundles gerados.</p>
+    <div class="schema-grid">
+      <article><strong>Auth</strong><span>login, cadastro, recuperação e papéis de usuário</span></article>
+      <article><strong>MongoDB</strong><span>coleções documentadas em backend-blueprint</span></article>
+      <article><strong>Dashboard</strong><span>métricas, campanhas, personagens e reservas</span></article>
+      <article><strong>Foundry Bridge</strong><span>WorldManifest, Actor JSON, Journal e Scenes</span></article>
+      <article><strong>IA do Mestre</strong><span>aventuras, NPCs, cenas, encontros e loot</span></article>
+    </div>
+  </section>
+
+  <footer class="footer"><p>Mestre Orc • Dashboard pronto para evoluir para SaaS real.</p></footer>
+  <script src="./foundry-config.js"></script>
+  <script src="./script.js"></script>
+  <script src="./platform-demo.js"></script>
+  <script src="./phase2-data.js"></script>
+  <script src="./foundry-export.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integração Foundry VTT | Mestre Orc</title>
+    <meta name="description" content="Portal de acesso ao Foundry VTT do Mestre Orc, com instruções para jogadores, checklist de sessão e botão de entrada na mesa virtual.">
+    <meta property="og:title" content="Foundry VTT | Mestre Orc">
+    <meta property="og:description" content="Acesse a mesa virtual, confira o checklist e prepare sua sessão online de D&amp;D.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="logo" href="./index.html">MESTRE <span>ORC</span></a>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="main-navigation"><span></span><span></span><span></span></button>
+        <ul class="nav-links" id="main-navigation">
+            <li><a href="./index.html">Início</a></li>
+            <li><a href="./Campanhas.html">Aventuras</a></li>
+            <li><a href="./agenda.html">Agenda</a></li>
+            <li><a href="./area-jogador.html">Área do Jogador</a></li>
+            <li><a href="./foundry.html" class="active-link">Foundry</a></li>
+            <li><a href="./dashboard-mestre.html">Painel</a></li>
+            <li><a href="./ia-mestre.html">IA Orc</a></li>
+            <li><a href="./ia-avancada.html">IA Pro</a></li>
+      <li><a href="./reservas.html">Reservas</a></li>
+        
+            <li><a href="./biblioteca-premium.html">Biblioteca</a></li>
+            <li><a href="./biblioteca-premium.html">Biblioteca</a></li>
+      <li><a href="./marketplace.html">Marketplace</a></li>
+            <li><a href="./mobile.html">App Mobile</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-hero foundry-hero">
+        <p class="eyebrow">Fase 3 • Bridge Foundry VTT</p>
+        <h1>Portal Foundry VTT</h1>
+        <p>Portal de acesso e exportação: campanhas, personagens e aventuras agora geram JSON Foundry Ready para macro, módulo ou importador futuro.</p>
+        <div class="hero-actions section-actions">
+            <a data-foundry-link class="btn-cta btn-cta-primary">Entrar na Mesa</a>
+            <a href="./area-jogador.html" class="btn-cta btn-cta-secondary">Voltar para Área do Jogador</a>
+        </div>
+    </header>
+
+    <main class="section">
+        <h2 class="section-title">Como a integração funciona</h2>
+        <p class="section-text">Nesta fase, o site não altera o código do Foundry. Ele funciona como uma camada de acesso: o jogador reserva a vaga, prepara a ficha, consulta instruções e entra na mesa hospedada quando a sessão estiver liberada.</p>
+
+        <div class="integration-grid">
+            <article class="integration-card">
+                <span>01</span>
+                <h3>Site Mestre Orc</h3>
+                <p>Organiza a jornada do visitante: aventura, agenda, reserva, ficha e suporte.</p>
+            </article>
+            <article class="integration-card">
+                <span>02</span>
+                <h3>Área do Jogador</h3>
+                <p>Entrega instruções, checklist e atalhos para quem já confirmou a participação.</p>
+            </article>
+            <article class="integration-card">
+                <span>03</span>
+                <h3>Foundry VTT</h3>
+                <p>Abre a mesa virtual em nova aba, mantendo o Foundry como aplicação separada e estável.</p>
+            </article>
+        </div>
+    </main>
+
+    <section class="section foundry-panel" aria-labelledby="checklist-title">
+        <div class="foundry-box">
+            <div>
+                <p class="eyebrow">Antes de entrar</p>
+                <h2 id="checklist-title" class="section-title align-left">Checklist do jogador</h2>
+                <ul class="foundry-checklist">
+                    <li>Vaga confirmada pelo WhatsApp.</li>
+                    <li>Nome do personagem definido.</li>
+                    <li>Ficha preparada ou rascunhada.</li>
+                    <li>Discord e microfone testados.</li>
+                    <li>Navegador atualizado para acessar o Foundry.</li>
+                </ul>
+            </div>
+            <aside class="session-access-card">
+                <h3>Acesso rápido</h3>
+                <p>Use este botão somente no horário combinado da sessão ou quando o mestre liberar a sala.</p>
+                <a data-foundry-link class="btn-cta btn-cta-primary full-btn">Abrir Foundry</a>
+                <a href="https://wa.me/5511961372048?text=Ol%C3%A1%2C%20Mestre%20Orc%21%20Preciso%20de%20ajuda%20para%20entrar%20no%20Foundry." target="_blank" rel="noopener" class="text-link">Pedir ajuda pelo WhatsApp</a>
+            </aside>
+        </div>
+    </section>
+
+    <section class="section foundry-panel glass-panel">
+        <p class="eyebrow">Exportação Foundry Ready</p>
+        <h2 class="section-title">Ferramentas de bridge</h2>
+        <p class="section-text">Escolha uma campanha ou personagem cadastrado e gere arquivos JSON estruturados para o Foundry. Esta etapa prepara o caminho para um módulo real de importação.</p>
+        <div data-foundry-export-panel></div>
+    </section>
+
+
+    <section class="section foundry-panel glass-panel">
+        <p class="eyebrow">Sprint 2 • Integração Foundry realista</p>
+        <h2 class="section-title">Exportação usando backend</h2>
+        <p class="section-text">Agora o backend possui rotas para buscar dados reais no MongoDB e gerar World, Actor ou Bundle para Foundry. Isso é a base para um módulo importador dentro do Foundry.</p>
+        <div data-foundry-real-bridge></div>
+    </section>
+
+    <section class="section quick-access">
+        <h2 class="section-title">Próximas melhorias</h2>
+        <div class="quick-grid">
+            <article class="quick-card"><h3>Login do jogador</h3><p>Entrada individual com histórico de mesas e personagem.</p></article>
+            <article class="quick-card"><h3>Dashboard do mestre</h3><p>Controle de jogadores, links de sala e status da campanha.</p></article>
+            <article class="quick-card"><h3>Exportação de ficha</h3><p>Preparar dados do personagem para uso futuro no Foundry.</p></article>
+            <article class="quick-card"><h3>Domínio próprio</h3><p>Substituir IP direto por vtt.mestreorc.com.br.</p></article>
+        </div>
+    </section>
+
+    <footer class="footer"><p>Mestre Orc • Integração com Foundry VTT.</p></footer>
+    <script src="./api-client.js"></script>
+    <script src="./foundry-config.js"></script>
+    <script src="./phase2-data.js"></script>
+    <script src="./foundry-export.js"></script>
+    <script src="./foundry-bridge.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

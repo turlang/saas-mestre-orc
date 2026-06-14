@@ -1,0 +1,253 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  PLAYER
+  MASTER
+  ADMIN
+}
+
+enum ReservationStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+}
+
+enum ProductType {
+  ADVENTURE
+  MAP
+  TOKEN
+  FOUNDRY_BUNDLE
+  COURSE
+}
+
+model User {
+  id           String        @id @default(auto()) @map("_id") @db.ObjectId
+  name         String
+  email        String        @unique
+  passwordHash String
+  role         UserRole      @default(PLAYER)
+  avatarUrl    String?
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  characters   Character[]
+  reservations Reservation[]
+  ownedCampaigns Campaign[]   @relation("CampaignOwner")
+  products     MarketplaceProduct[] @relation("ProductSeller")
+  generatedContents GeneratedContent[]
+  libraryItems LibraryItem[]
+  payments     Payment[]
+  subscriptions Subscription[]
+  foundryExports FoundryExportLog[]
+}
+
+model Campaign {
+  id          String        @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  system      String        @default("D&D 5e")
+  description String
+  levelRange  String?
+  schedule    String?
+  price       Float         @default(0)
+  seatsTotal  Int           @default(5)
+  seatsTaken  Int           @default(0)
+  foundryUrl  String?
+  coverUrl    String?
+  ownerId     String        @db.ObjectId
+  owner       User          @relation("CampaignOwner", fields: [ownerId], references: [id])
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  reservations Reservation[]
+  characters   Character[]
+}
+
+model Character {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  ancestry    String?
+  className   String?
+  level       Int       @default(1)
+  background  String?
+  notes       String?
+  sheetJson   Json?
+  userId      String    @db.ObjectId
+  user        User      @relation(fields: [userId], references: [id])
+  campaignId  String?   @db.ObjectId
+  campaign    Campaign? @relation(fields: [campaignId], references: [id])
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Reservation {
+  id          String            @id @default(auto()) @map("_id") @db.ObjectId
+  userId      String            @db.ObjectId
+  user        User              @relation(fields: [userId], references: [id])
+  campaignId  String            @db.ObjectId
+  campaign    Campaign          @relation(fields: [campaignId], references: [id])
+  status      ReservationStatus @default(PENDING)
+  amount      Float             @default(0)
+  notes       String?
+  payments    Payment[]
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+}
+
+model MarketplaceProduct {
+  id          String      @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  type        ProductType
+  description String
+  price       Float       @default(0)
+  coverUrl    String?
+  fileUrl     String?
+  sellerId    String      @db.ObjectId
+  seller      User        @relation("ProductSeller", fields: [sellerId], references: [id])
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  payments    Payment[]
+}
+
+model Review {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  author    String
+  rating    Int
+  comment   String
+  createdAt DateTime @default(now())
+}
+
+enum GeneratedContentType {
+  ADVENTURE
+  NPC
+  MAP
+  LOOT
+  FOUNDRY_BUNDLE
+}
+
+enum LibraryItemType {
+  ADVENTURE
+  NPC
+  MAP
+  TOKEN
+  LOOT
+  FOUNDRY_BUNDLE
+  COURSE
+}
+
+model GeneratedContent {
+  id          String               @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  type        GeneratedContentType
+  prompt      String
+  contentJson Json
+  userId      String               @db.ObjectId
+  user        User                 @relation(fields: [userId], references: [id])
+  createdAt   DateTime             @default(now())
+  updatedAt   DateTime             @updatedAt
+}
+
+model LibraryItem {
+  id          String          @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  type        LibraryItemType
+  system      String          @default("D&D 5e")
+  levelRange  String?
+  theme       String?
+  description String
+  tags        String[]
+  coverUrl    String?
+  contentJson Json?
+  isPremium   Boolean         @default(false)
+  price       Float           @default(0)
+  authorId    String          @db.ObjectId
+  author      User            @relation(fields: [authorId], references: [id])
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+}
+
+
+enum PaymentStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  CANCELLED
+  REFUNDED
+}
+
+enum PaymentProvider {
+  MERCADO_PAGO
+  MANUAL
+}
+
+enum PaymentPurpose {
+  RESERVATION
+  MARKETPLACE_PRODUCT
+  SUBSCRIPTION
+}
+
+enum PlanType {
+  PLAYER
+  MASTER
+  MASTER_PRO
+}
+
+enum SubscriptionStatus {
+  ACTIVE
+  PENDING
+  CANCELLED
+  EXPIRED
+}
+
+model Payment {
+  id                 String          @id @default(auto()) @map("_id") @db.ObjectId
+  provider           PaymentProvider @default(MERCADO_PAGO)
+  status             PaymentStatus   @default(PENDING)
+  purpose            PaymentPurpose
+  amount             Float
+  currency           String          @default("BRL")
+  externalReference  String?         @unique
+  providerPaymentId  String?
+  checkoutUrl        String?
+  metadata           Json?
+  userId             String          @db.ObjectId
+  user               User            @relation(fields: [userId], references: [id])
+  reservationId      String?         @db.ObjectId
+  reservation        Reservation?    @relation(fields: [reservationId], references: [id])
+  productId          String?         @db.ObjectId
+  product            MarketplaceProduct? @relation(fields: [productId], references: [id])
+  subscriptionId     String?         @db.ObjectId
+  subscription       Subscription?   @relation(fields: [subscriptionId], references: [id])
+  createdAt          DateTime        @default(now())
+  updatedAt          DateTime        @updatedAt
+}
+
+model Subscription {
+  id        String             @id @default(auto()) @map("_id") @db.ObjectId
+  plan      PlanType
+  status    SubscriptionStatus @default(PENDING)
+  price     Float
+  startsAt  DateTime           @default(now())
+  endsAt    DateTime?
+  userId    String             @db.ObjectId
+  user      User               @relation(fields: [userId], references: [id])
+  payments  Payment[]
+  createdAt DateTime           @default(now())
+  updatedAt DateTime           @updatedAt
+}
+
+model FoundryExportLog {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  type        String
+  sourceId    String?
+  payloadJson Json
+  userId      String   @db.ObjectId
+  user        User     @relation(fields: [userId], references: [id])
+  createdAt   DateTime @default(now())
+}

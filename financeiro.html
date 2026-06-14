@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financeiro | Mestre Orc</title>
+  <meta name="description" content="Painel financeiro do Mestre Orc com pagamentos, assinaturas e Mercado Pago.">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a class="logo" href="./index.html">MESTRE <span>ORC</span></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-navigation"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="main-navigation">
+      <li><a href="./dashboard-mestre.html">Painel</a></li>
+      <li><a href="./foundry.html">Foundry</a></li>
+      <li><a href="./marketplace.html">Marketplace</a></li>
+      <li><a href="./financeiro.html" class="active-link">Financeiro</a></li>
+    </ul>
+  </nav>
+  <header class="page-hero compact-hero">
+    <p class="eyebrow">Sprint 3 • Monetização</p>
+    <h1>Financeiro e Assinaturas</h1>
+    <p>Área preparada para Mercado Pago, assinaturas, controle de receita e histórico de pagamentos.</p>
+  </header>
+  <main class="section">
+    <h2 class="section-title">Resumo financeiro</h2>
+    <div class="dashboard-stats" data-finance-summary></div>
+
+    <section class="phase56-grid">
+      <article class="premium-panel">
+        <h3>Plano Jogador</h3><p>Histórico, personagens e reservas.</p><strong>R$ 19,90/mês</strong>
+        <button class="btn-cta btn-cta-primary" onclick="MestreOrcPayments.checkoutPlan('PLAYER')">Assinar</button>
+      </article>
+      <article class="premium-panel">
+        <h3>Plano Mestre</h3><p>Campanhas, reservas, biblioteca e IA.</p><strong>R$ 49,90/mês</strong>
+        <button class="btn-cta btn-cta-primary" onclick="MestreOrcPayments.checkoutPlan('MASTER')">Assinar</button>
+      </article>
+      <article class="premium-panel">
+        <h3>Mestre Pro</h3><p>Marketplace, Foundry Bundle e IA Pro.</p><strong>R$ 89,90/mês</strong>
+        <button class="btn-cta btn-cta-primary" onclick="MestreOrcPayments.checkoutPlan('MASTER_PRO')">Assinar</button>
+      </article>
+    </section>
+  </main>
+  <footer class="footer"><p>Mestre Orc • Financeiro e pagamentos.</p></footer>
+  <script src="./api-client.js"></script><script src="./payments.js"></script><script src="./script.js"></script>
+</body>
+</html>

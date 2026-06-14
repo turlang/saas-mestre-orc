@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One-Shots de D&amp;D | Mestre Orc</title>
+    <meta name="description" content="Aventuras one-shot de D&amp;D com duração média de 4 horas, vagas para jogadores e reserva online com o Mestre Orc.">
+    <meta property="og:title" content="One-Shots de D&amp;D | Mestre Orc">
+    <meta property="og:description" content="Missões fechadas para iniciantes e veteranos em mesas online de RPG.">
+    <!-- Importação de fontes consistentes com o resto do site -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para a galeria de One-shots */
+        .adventure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            padding: 50px 10%;
+        }
+
+        /* Caixa Flutuante (Card) */
+        .adventure-card {
+            background: #0c0c0c;
+            border: 1px solid #1a1a1a;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: var(--transition);
+            /* Usando a transição do seu style.css */
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .adventure-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+            box-shadow: 0 10px 30px rgba(197, 160, 89, 0.1);
+        }
+
+        /* Área de Mídia (Imagem ou Vídeo) */
+        .card-media {
+            width: 100%;
+            height: 200px;
+            background: #151515;
+            overflow: hidden;
+            position: relative;
+            border-bottom: 2px solid var(--blood);
+        }
+
+        .card-media img,
+        .card-media video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+            transition: 0.5s;
+        }
+
+        .adventure-card:hover .card-media img {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        /* Conteúdo de Texto */
+        .card-body {
+            padding: 25px;
+            flex-grow: 1;
+        }
+
+        .card-body h3 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            color: var(--gold);
+        }
+
+        .card-body p {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        .btn-play {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid var(--blood);
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .btn-play:hover {
+            background: var(--blood);
+        }
+    
+.modal-content,
+.popup-content{
+    text-align:justify;
+    line-height:1.8;
+}
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">MESTRE <span>ORC</span></div>
+        
+        <button class="menu-toggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="main-navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links" id="main-navigation">
+            <li><a href="./index.html">Início</a></li>
+            <li><a href="./Campanhas.html">Aventuras</a></li>
+            <li><a href="./oneshot.html" style="color: var(--gold); opacity: 1;">One-Shots</a></li>
+
+        
+            <li><a href="./marketplace.html">Marketplace</a></li>
+            <li><a href="./mobile.html">App Mobile</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" style="height: 40vh;">
+        <div class="hero-content">
+            <h1>Missões One-Shot</h1>
+            <p>Seis caminhos, um destino: a glória ou a morte.</p>
+        </div>
+    </header>
+
+    <main class="adventure-grid">
+
+        <!-- AVENTURA 1 -->
+        <article class="adventure-card">
+            <div class="card-media">
+                <!-- Imagem da aventura -->
+                <img src="./corpos-roubados.jpg" alt="Capa Aventura 1">
+            </div>
+            <div class="card-body">
+                <h3>Corpos Roubados</h3>
+                <!-- AQUI: Texto descritivo da aventura -->
+                <p>
+                    O silêncio das covas vazias é apenas o começo.
+                    <br />
+                    Em uma cidade costeira assolada por mistérios, os mortos não estão descansando. Túmulos violados e
+                    desaparecimentos inexplicáveis escondem uma verdade terrível: nas sombras, um grupo de necromantes
+                    ergue um exército de mortos-vivos que ameaça consumir os vivos.
+
+                <details>O Inimigo Interno
+                    <br />
+                    O mentor desta heresia é ninguém menos que um ex-guarda corrupto. Conhecedor de todos os segredos da
+                    cidade, ele lidera o culto com mão de ferro, buscando o poder supremo: o ritual proibido para se
+                    tornar um Lich indestrutível.
+                    <br />
+                    A Chamada aos Heróis
+                    Investigue o rastro de cadáveres e desvende a trama macabra.
+                    Enfrente a horda de mortos e o líder traidor em um combate épico.
+                    Impeça o nascimento de um monstro milenar antes que o ritual se complete.
+                    Uma recompensa generosa aguarda aqueles que tiverem a coragem de purificar a costa. A cidade clama
+                    por salvação. Você será o herói ou apenas mais um corpo para o exército deles?
+                </details>
+                </p>
+                <a href="#" class="btn-play">Ver Detalhes</a>
+            </div>
+        </article>
+
+        <!-- AVENTURA 2 -->
+        <article class="adventure-card">
+            <div class="card-media">
+                <!-- Imagem da aventura -->
+                <img src="./contrabando-nos-esgotos.jpg" alt="Capa Aventura 2">
+            </div>
+            <div class="card-body">
+                <h3>Contrabando nos Esgotos</h3>
+                <!-- AQUI: Texto descritivo da aventura -->
+                <p>Um grupo de contrabandistas deve atravessar os esgotos da cidade para entregar armas e munições a um
+                    comprador. No caminho, enfrentarão rivais, monstros e os rituais de um culto sombrio, enquanto
+                    tentam sobreviver a uma criatura colossal que habita as profundezas.</p>
+
+                <a href="#" class="btn-play">Ver Detalhes</a>
+            </div>
+        </article>
+
+        <!-- AVENTURA 3 -->
+        <article class="adventure-card">
+            <div class="card-media">
+                <!-- Imagem da aventura -->
+                <img src="./a-furia-verde.jpg" alt="Capa Aventura 3">
+            </div>
+            <div class="card-body">
+                <h3>A Fúria Verde</h3>
+                <!-- AQUI: Texto descritivo da aventura -->
+                <p> O terror tem raízes profundas. Você conseguirá cortá-las?
+                    <br />
+                    Uma aldeia desesperada, rastros de destruição e um rugido que ecoa da floresta densa: a Fúria
+                    Verde despertou.
+                    <br />
+                <details>Nesta aventura épica de sessão única para D&D 5e, seus heróis são a última linha de
+                    defesa contra uma criatura monstruosa que ameaça apagar um vilarejo do mapa.
+                    <br />
+                    Mergulhe em uma caçada implacável onde o perigo espreita em cada sombra. Desbrave matas fechadas,
+                    sobreviva a armadilhas mortais e invada uma caverna esquecida protegida por guardiões ferozes. O
+                    confronto final aguarda nas profundezas da terra — uma batalha lendária onde apenas a coragem e a
+                    estratégia podem garantir a sobrevivência.
+                    <br />
+                    Explore. Sobreviva. Vença a Fúria. Tesouros inestimáveis e a glória eterna esperam por aqueles que
+                    não temerem o verde.
+                </details>
+                </p>
+                <a href="#" class="btn-play">Ver Detalhes</a>
+            </div>
+        </article>
+
+        <!-- AVENTURA 4 -->
+        <article class="adventure-card">
+            <div class="card-media">
+                <!-- Imagem da aventura -->
+                <img src="./segredos-torres-gemeas.png" alt="Capa Aventura 4">
+            </div>
+            <div class="card-body">
+                <h3>Segredos das Torres Gêmeas</h3>
+                <!-- AQUI: Texto descritivo da aventura -->
+                <p>Duas torres místicas que aparecem apenas em noites de eclipse. Tesouros antigos e perigos planares
+                    aguardam os audazes.</p>
+                <a href="#" class="btn-play">Ver Detalhes</a>
+            </div>
+        </article>
+
+        <!-- AVENTURA 5 -->
+        <article class="adventure-card">
+            <div class="card-media">
+                <!-- Imagem da aventura -->
+                <img src="./alquimista-ferro.jpg" alt="Capa O Alquimista de Ferro">
+            </div>
+            <div class="card-body">
+                <h3>O Alquimista de Ferro</h3>
+                <!-- AQUI: Texto descritivo da aventura -->
+                <p>Os personagens dos jogadores são contratados por um mago poderoso para investigar as Torres Gêmeas,
+                    um par de torres antigas e misteriosas que se elevam sobre a paisagem. Há rumores de que os antigos
+                    guardiões das torres foram corrompidos pelo mal e agora usam seus poderes para fins nefastos.
+
+                <details>
+                    < Os jogadores devem entrar nas torres e explorar seus andares, lutando contra guardiões
+                        corrompidos, armadilhas perigosas e descobrindo segredos antigos. À medida que eles descobrem
+                        mais informações, eles percebem que a torre contém muito mais do que apenas um tesouro
+                        escondido. Os jogadores terão que desvendar os segredos das torres, enfrentando desafios
+                        emocionantes e resolvendo enigmas antigos. Eles eventualmente descobrirão que as torres estão
+                        ligadas a um mundo paralelo cheio de magia poderosa e criaturas perigosas. A aventura culmina em
+                        um confronto final contra o guardião final das torres, uma entidade antiga e poderosa que usa
+                        seus poderes para controlar as torres e o mundo paralelo. Se os jogadores conseguirem derrotar o
+                        guardião, eles serão recompensados ​​com tesouros valiosos e poderosos. Em resumo, a aventura de
+                        RPG "Segredos das Torres Gêmeas" é uma jornada emocionante, onde os jogadores terão que explorar
+                        duas torres antigas, desvendar segredos antigos e lutar contra os guardiões corruptos. A
+                        aventura pode ser jogada em uma única sessão./details>
+                        </p>
+                        <a href="#" class="btn-play">Ver Detalhes</a>
+            </div>
+        </article>
+
+        <!-- AVENTURA 6 -->
+        <article class="adventure-card">
+            <div class="card-media">
+                <!-- Imagem da aventura -->
+                <img src="./banquete-sangue.jpg" alt="Capa O Banquete de Sangue">
+            </div>
+            <div class="card-body">
+                <h3>O Banquete de Sangue</h3>
+                <!-- AQUI: Texto descritivo da aventura -->
+                <p>Um convite para um jantar nobre que se transforma em uma caçada mortal. Sobreviva à noite no Solar
+                    dos Blackwood.</p>
+                <a href="#" class="btn-play">Ver Detalhes</a>
+            </div>
+        </article>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Mestre Orc RPG Online. Todos os direitos reservados.</p>
+    </footer>
+    <!-- Estrutura do Pop-up (Modal) com Formulário de Reserva -->
+    <div id="adventure-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+
+            <div class="modal-header">
+                <h2 id="modal-title">Título da Aventura</h2>
+            </div>
+
+            <div class="modal-body">
+                <!-- COLUNA ESQUERDA: Mídia e Resumo -->
+                <div class="modal-visuals">
+                    <div id="modal-media" class="modal-media-box">
+                        <!-- O JavaScript inserirá imagem/vídeo aqui -->
+                    </div>
+                    <div class="modal-meta">
+                        <span><strong>Duração:</strong> 4 Horas</span>
+                        <span><strong>Nível:</strong> 1 ao 5</span>
+                    </div>
+                </div>
+
+                <!-- COLUNA DIREITA: Formulário de Agendamento -->
+                <div class="modal-form-container">
+                    <h3>Reserve sua Vaga</h3>
+                    <form id="reservation-form" class="rpg-form">
+                        <!-- Campo: Nome Real do Jogador -->
+                        <div class="form-group">
+                            <label for="player-name">Seu Nome (Jogador)</label>
+                            <input type="text" id="player-name" name="player_name" placeholder="Ex: Arnaldo Silva"
+                                required>
+                        </div>
+
+                        <!-- Campo: Nome do Personagem -->
+                        <div class="form-group">
+                            <label for="char-name">Nome do Personagem</label>
+                            <input type="text" id="char-name" name="char_name" placeholder="Ex: Grog, o Destruidor"
+                                required>
+                        </div>
+
+                        <!-- Campo: Seleção de Classe -->
+                        <div class="form-group">
+                            <label for="char-class">Classe Escolhida</label>
+                            <select id="char-class" name="char_class" required>
+                                <option value="" disabled selected>Selecione uma classe...</option>
+                                <option value="guerreiro">Guerreiro</option>
+                                <option value="mago">Mago / Feiticeiro</option>
+                                <option value="ladino">Ladino</option>
+                                <option value="clérigo">Clérigo / Paladino</option>
+                                <option value="outra">Outra (Descrever no chat)</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn-primary full-width">Enviar Reserva via E-mail</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("adventure-modal");
+        const closeBtn = document.querySelector(".close-modal");
+
+        // 1. Lógica para abrir o modal ao clicar nos botões das cards
+        document.querySelectorAll('.btn-play').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const card = button.closest('.adventure-card');
+                const title = card.querySelector('h3').innerText;
+                const mediaSrc = card.querySelector('.card-media img').src;
+
+                document.getElementById('modal-title').innerText = title;
+                document.getElementById('modal-media').innerHTML = `<img src="${mediaSrc}" style="width:100%; border-radius:8px;">`;
+                modal.style.display = "flex";
+            });
+        });
+
+        // 2. Lógica para fechar o modal
+        closeBtn.onclick = () => modal.style.display = "none";
+        window.onclick = (event) => { if (event.target == modal) modal.style.display = "none"; }
+
+        // 3. Lógica para enviar os dados por E-mail (Protocolo mailto)
+        document.getElementById('reservation-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const aventura = document.getElementById('modal-title').innerText;
+            const jogador = document.getElementById('player-name').value;
+            const personagem = document.getElementById('char-name').value;
+            const classe = document.getElementById('char-class').value;
+
+            const seuEmail = "evandroccj@gmail.com";
+            const assunto = `Reserva de Vaga: ${aventura}`;
+
+            // Construindo o corpo do texto
+            const mensagem =
+                `Olá Mestre!\n\n` +
+                `Gostaria de reservar uma vaga para a aventura.\n\n` +
+                `Aventura: ${aventura}\n` +
+                `Jogador: ${jogador}\n` +
+                `Personagem: ${personagem}\n` +
+                `Classe: ${classe}`;
+
+            // Montagem da URL mailto
+            const mailtoLink = `mailto:${seuEmail}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(mensagem)}`;
+
+            // Executa a abertura do cliente de e-mail
+            window.location.href = mailtoLink;
+        });
+    </script>
+
+
+
+<script>
+function reservarVaga(){
+    const mensagem = encodeURIComponent(
+        "Olá! Quero reservar minha vaga no Mestre Orc."
+    );
+    window.open(
+        "https://wa.me/5511961372048?text=" + mensagem,
+        "_blank"
+    );
+}
+</script>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

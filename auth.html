@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login e Cadastro | Mestre Orc</title>
+  <meta name="description" content="Acesse ou crie sua conta na plataforma Mestre Orc para gerenciar campanhas, jogadores, sessões e reservas de RPG online.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a class="logo" href="./index.html">MESTRE <span>ORC</span></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="main-navigation"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="main-navigation">
+      <li><a href="./index.html">Início</a></li>
+      <li><a href="./Campanhas.html">Aventuras</a></li>
+      <li><a href="./agenda.html">Agenda</a></li>
+      <li><a href="./dashboard-mestre.html">Painel</a></li>
+      <li><a href="./auth.html" class="active-link">Entrar</a></li>
+    
+            <li><a href="./marketplace.html">Marketplace</a></li>
+            <li><a href="./mobile.html">App Mobile</a></li>
+        </ul>
+  </nav>
+
+  <header class="page-hero auth-hero">
+    <p class="eyebrow">Fase 1 • Autenticação</p>
+    <h1>Conta Mestre Orc</h1>
+    <p>Primeira camada de login e cadastro, pronta para evoluir para JWT, MongoDB e painel multiusuário.</p>
+  </header>
+
+  <main class="section auth-layout">
+    <section class="auth-card glass-panel" aria-labelledby="login-title">
+      <h2 id="login-title">Entrar</h2>
+      <p>Acesse o painel como mestre, jogador ou administrador.</p>
+      <form class="app-form" data-auth-form="login">
+        <label>E-mail
+          <input type="email" name="email" placeholder="seuemail@exemplo.com" required>
+        </label>
+        <label>Senha
+          <input type="password" name="password" placeholder="Digite sua senha" required>
+        </label>
+        <label>Perfil
+          <select name="role">
+            <option value="master">Mestre</option>
+            <option value="player">Jogador</option>
+            <option value="admin">Administrador</option>
+          </select>
+        </label>
+        <button class="btn-cta btn-cta-primary" type="submit">Entrar no Painel</button>
+      </form>
+    </section>
+
+    <section class="auth-card glass-panel" aria-labelledby="register-title">
+      <h2 id="register-title">Criar conta</h2>
+      <p>Cadastro visual para simular o fluxo real da plataforma.</p>
+      <form class="app-form" data-auth-form="register">
+        <label>Nome
+          <input type="text" name="name" placeholder="Nome do aventureiro" required>
+        </label>
+        <label>E-mail
+          <input type="email" name="email" placeholder="email@exemplo.com" required>
+        </label>
+        <label>Tipo de conta
+          <select name="role">
+            <option value="player">Jogador</option>
+            <option value="master">Mestre</option>
+          </select>
+        </label>
+        <button class="btn-cta btn-cta-secondary" type="submit">Criar Conta Demo</button>
+      </form>
+    </section>
+  </main>
+
+  <section class="section schema-preview">
+    <h2 class="section-title">Modelo planejado para MongoDB</h2>
+    <div class="schema-grid">
+      <article><strong>Users</strong><span>nome, email, senha hash, perfil, status</span></article>
+      <article><strong>Campaigns</strong><span>mestre, sistema, nível, vagas, preço, status</span></article>
+      <article><strong>Sessions</strong><span>campanha, data, presença, preparação, link Foundry</span></article>
+      <article><strong>Payments</strong><span>jogador, campanha, valor, status, método</span></article>
+    </div>
+  </section>
+
+  <footer class="footer"><p>Mestre Orc • Autenticação preparada para a plataforma.</p></footer>
+  <script src="./foundry-config.js"></script>
+  <script src="./script.js"></script>
+  <script src="./platform-demo.js"></script>
+</body>
+</html>

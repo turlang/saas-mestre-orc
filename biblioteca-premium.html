@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca Premium | Mestre Orc</title>
+  <meta name="description" content="Biblioteca premium do Mestre Orc com aventuras, NPCs, mapas, tokens, loot e bundles para Foundry VTT.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a class="logo" href="./index.html">MESTRE <span>ORC</span></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="main-navigation"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="main-navigation">
+      <li><a href="./index.html">Início</a></li>
+      <li><a href="./ia-avancada.html">IA Pro</a></li>
+      <li><a href="./marketplace.html">Marketplace</a></li>
+      <li><a href="./dashboard-mestre.html">Painel</a></li>
+      <li><a href="./auth.html">Entrar</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-hero">
+    <p class="eyebrow">Sprint 5 • Conteúdo premium</p>
+    <h1>Biblioteca Premium</h1>
+    <p>Organize aventuras, NPCs, mapas, tokens, loot e bundles Foundry com filtros por sistema, nível, tema e tipo.</p>
+  </header>
+
+  <main class="section">
+    <form class="library-filters" id="libraryFilters">
+      <input id="librarySearch" placeholder="Buscar na biblioteca...">
+      <select id="libraryType">
+        <option value="">Todos os tipos</option>
+        <option value="ADVENTURE">Aventura</option>
+        <option value="NPC">NPC</option>
+        <option value="MAP">Mapa</option>
+        <option value="TOKEN">Token</option>
+        <option value="LOOT">Loot</option>
+        <option value="FOUNDRY_BUNDLE">Foundry Bundle</option>
+        <option value="COURSE">Curso</option>
+      </select>
+      <select id="libraryPremium">
+        <option value="">Grátis e Premium</option>
+        <option value="true">Somente Premium</option>
+        <option value="false">Somente Grátis</option>
+      </select>
+      <button class="btn-cta btn-cta-primary" type="submit">Filtrar</button>
+    </form>
+
+    <div id="libraryStatus" class="notice-card">Carregando biblioteca...</div>
+    <section id="libraryGrid" class="premium-grid"></section>
+  </main>
+
+  <section class="section quick-access">
+    <h2 class="section-title">Pronto para monetização</h2>
+    <div class="quick-grid">
+      <article class="quick-card"><h3>Conteúdo gratuito</h3><p>Amostras para atrair jogadores e mestres.</p></article>
+      <article class="quick-card"><h3>Conteúdo premium</h3><p>One-shots, mapas e bundles vendidos no marketplace.</p></article>
+      <article class="quick-card"><h3>Foundry Ready</h3><p>Estrutura preparada para importador futuro.</p></article>
+      <article class="quick-card"><h3>SEO</h3><p>Cada item pode virar página indexável futuramente.</p></article>
+    </div>
+  </section>
+
+  <footer class="footer"><p>Mestre Orc • Sprint 5 concluído.</p></footer>
+  <script src="./api-client.js"></script>
+  <script src="./biblioteca-premium.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

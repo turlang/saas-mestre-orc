@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Montar Personagem D&amp;D | Mestre Orc</title>
+  <meta name="description" content="Crie e exporte sua ficha de personagem de D&amp;D com o construtor do Mestre Orc.">
+  <link rel="stylesheet" href="./personagem.css" />
+</head>
+<body>
+  <header class="topbar no-print">
+    <a href="./index.html" class="back">← Voltar</a>
+    <div>
+      <h1>Ficha de Personagem</h1>
+      <p>Layout alinhado pelo PDF original + criação automática.</p>
+    </div>
+    <div class="actions">
+      <button type="button" id="btnZoomOut">− Zoom</button>
+      <button type="button" id="btnZoomIn">+ Zoom</button>
+      <button type="button" id="btnSave">Salvar</button>
+      <button type="button" id="btnClear">Limpar</button>
+      <button type="button" id="btnExport">Exportar JS</button>
+      <button type="button" id="btnPrint" class="primary">Exportar PDF</button>
+    </div>
+  </header>
+
+  <aside class="builder no-print">
+    <div class="builder-head">
+      <strong>Criação automática</strong>
+      <span>Preenche a ficha original sem mexer no alinhamento.</span>
+    </div>
+
+    <div class="builder-grid">
+      <label>Nome
+        <input id="quickName" placeholder="Ex: Thorgar">
+      </label>
+
+      <label>Classe
+        <select id="quickClass"></select>
+      </label>
+
+      <label>Espécie
+        <select id="quickSpecies"></select>
+      </label>
+
+      <label>Antecedente
+        <select id="quickBackground"></select>
+      </label>
+
+      <label>Atributos
+        <select id="quickArray">
+          <option value="standard">Padrão 15,14,13,12,10,8</option>
+          <option value="balanced">Equilibrado 14,14,13,12,10,10</option>
+          <option value="heroic">Heroico 16,15,14,12,10,8</option>
+        </select>
+      </label>
+
+      <label>Nível
+        <input id="quickLevel" type="number" min="1" max="20" value="1">
+      </label>
+
+      <button type="button" id="btnQuick" class="builder-primary">Criar rápido</button>
+      <button type="button" id="btnStory">Gerar história</button>
+    </div>
+  </aside>
+
+  <main class="stage">
+    <form id="sheetForm" autocomplete="off">
+      <section class="sheet" data-page="1">
+        <img src="./assets/page-1.png" alt="Ficha página 1">
+        <div class="fields-layer" id="fieldsPage1"></div>
+      </section>
+
+      <section class="sheet" data-page="2">
+        <img src="./assets/page-2.png" alt="Ficha página 2">
+        <div class="fields-layer" id="fieldsPage2"></div>
+      </section>
+    </form>
+  </main>
+
+  <script src="./personagem.js"></script>
+</body>
+</html>
