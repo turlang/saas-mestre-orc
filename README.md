@@ -2,6 +2,10 @@
 
 Plataforma SaaS para mestres de RPG criarem, organizarem e gerenciarem campanhas, personagens, reservas, conteúdos gerados e exportações para ecossistemas digitais de RPG.
 
+## Preview
+
+![Preview do SaaS Mestre Orc](docs/preview.svg)
+
 ## Visão geral
 
 O SaaS Mestre Orc é um projeto autoral voltado para o universo de RPG de mesa. A proposta é oferecer uma central para mestres gerenciarem campanhas, jogadores, reservas, materiais de campanha, conteúdos gerados e integrações com ferramentas como Foundry VTT.
